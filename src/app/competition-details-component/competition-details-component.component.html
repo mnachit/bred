@@ -50,7 +50,7 @@
                                             <div class="d-flex justify-content-around">
                                                 <h1>List of participants</h1>
 
-                                                <h3 class="ms-3">18/20</h3>
+                                                <h3 class="ms-3">{{lenght}}/20</h3>
                                             </div>
                                             <div class="mt-1">
                                                 <button type="button" class="custom-button" data-bs-toggle="modal"
@@ -97,9 +97,9 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Ricky Antony</td>
-                                                        <td>ricky@example.com</td>
+                                                    <tr *ngFor="let userR of UserModel1">
+                                                        <td>{{userR.name}} {{userR.familyName}}</td>
+                                                        <td>{{userR.identityNumber}}</td>
                                                         <td class="text-end">
                                                             <div class="d-flex justify-content-end align-items-center">
                                                                 <button class="custom-btn me-4">

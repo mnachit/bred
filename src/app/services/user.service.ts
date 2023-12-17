@@ -9,7 +9,8 @@ import { UserModel } from './UserModel';
 })
 export class UserService {
 
-  private baseUrl = "http://localhost:8082/api/v1/member";
+  private baseUrl  = "http://localhost:8082/api/v1/member";
+  private baseUrl1 = "http://localhost:8082/api/v1/ranking/member";
 
   constructor(private http: HttpClient) { }
 
@@ -19,5 +20,9 @@ export class UserService {
 
   getAllUser(): Observable<{ message: string, result: UserModel[], errors: any, errorMap: any }> {
     return this.http.get<{ message: string, result: UserModel[], errors: any, errorMap: any }>(this.baseUrl);
+  }
+
+  getUserWithRank(id_com: number): Observable<{ message: string, result: UserModel[], errors: any, errorMap: any }> {
+    return this.http.get<{ message: string, result: UserModel[], errors: any, errorMap: any }>(`${this.baseUrl1}/${id_com}`);
   }
 }
