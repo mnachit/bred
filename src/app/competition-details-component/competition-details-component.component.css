@@ -1,0 +1,171 @@
+.custom-button {
+    --main-focus: #2d8cf0;
+    --font-color: #dedede;
+    --bg-color-sub: #222;
+    --bg-color: #323232;
+    --main-color: #dedede;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+
+    margin-left: 5.9cm;
+  }
+  
+  .custom-button, .custom-button__icon, .custom-button__text {
+    transition: all 0.3s;
+  }
+  
+  .custom-button .custom-button__text {
+    transform: translateX(25px);
+    color: var(--font-color);
+    font-weight: 600;
+  }
+  
+  .custom-button .custom-button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custom-button .custom-svg {
+    width: 20px;
+    stroke: var(--main-color);
+  }
+  
+  .custom-button:hover {
+    background: var(--bg-color);
+  }
+  
+  .custom-button:hover .custom-button__text {
+    color: transparent;
+  }
+  
+  .custom-button:hover .custom-button__icon {
+    width: 148px;
+    transform: translateX(0);
+  }
+  
+  .custom-button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+  }
+  
+  .custom-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100px;
+    height: 40px;
+    border: none;
+    padding: 0px 20px;
+    background-color: rgb(168, 38, 255);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px rgb(140, 32, 212);
+    transition-duration: .3s;
+  }
+  
+  .custom-svg {
+    width: 13px;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    fill: white;
+    transition-duration: .3s;
+  }
+  
+  .custom-btn:hover {
+    color: transparent;
+  }
+  
+  .custom-btn:hover .custom-svg {
+    right: 43%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    transition-duration: .3s;
+  }
+  
+  .custom-btn:active {
+    transform: translate(3px , 3px);
+    transition-duration: .3s;
+    box-shadow: 2px 2px 0px rgb(140, 32, 212);
+  }
+
+  .button1 {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    background: #e62222;
+  }
+  
+  .button1, .button1 span {
+    transition: 200ms;
+  }
+  
+  .button1 .text {
+    transform: translateX(35px);
+    color: white;
+    font-weight: bold;
+  }
+  
+  .button1 .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button1 svg {
+    width: 15px;
+    fill: #eee;
+  }
+  
+  .button1:hover {
+    background: #ff3636;
+  }
+  
+  .button1:hover .text {
+    color: transparent;
+  }
+  
+  .button1:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+  }
+  
+  .button1:focus {
+    outline: none;
+  }
+  
+  .button1:active .icon svg {
+    transform: scale(0.8);
+  }
+  

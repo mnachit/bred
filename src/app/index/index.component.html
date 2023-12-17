@@ -1,0 +1,127 @@
+<body class="sb-nav-fixed">
+    <app-nav></app-nav>
+    <div id="layoutSidenav">
+        <app-sidebar></app-sidebar>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <h1 class="mt-4">Welcome to the official page</h1>
+                            <ol class="breadcrumb mb-4">
+                            </ol>
+                        </div>
+                        <div class="mt-4">
+                            <button class="btn1" type="button" data-bs-toggle="modal" data-bs-target="#adduserModal"><i
+                                    class="animation"></i>Create New Competition<i class="animation"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            DataTable
+                        </div>
+                        <div class="table-responsive-sm">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name Competition</th>
+                                        <th>Date</th>
+                                        <th>Amount of Competition</th>
+                                        <th>Start Time</th>
+                                        <th>End Time</th>
+                                        <th>Location</th>
+                                        <th>Number Of Carticipants</th>
+                                        <th>Status</th>
+                                        <th>Access</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let com of response?.result">
+                                        <td>{{com.code}}</td>
+                                        <td>{{ com.date}}</td>
+                                        <td>{{com.amount}}</td>
+                                        <td>{{com.startTime}}</td>
+                                        <td>{{com.endTime}}</td>
+                                        <td>{{com.location}}</td>
+                                        <td>{{com.numberOfParticipants}}</td>
+                                        <td>
+                                            <span *ngIf="com.status == 'finished'"
+                                                class="badge badge-success bg-success">Done</span>
+                                            <span *ngIf="com.status != 'finished'"
+                                                class="badge badge-info bg-info">Doing</span>
+                                        </td>
+                                        <td>
+                                            <a [routerLink]="['/competition', com.code]">Details</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <app-footer></app-footer>
+        </div>
+    </div>
+
+    <div class="modal" id="adduserModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Competition</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="amountInput" class="form-label">Amount:</label>
+                            <input type="number" class="form-control" id="amount" name="amount"
+                                placeholder="Enter amount" [(ngModel)]="Competition1.amount">
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="dateInput" class="form-label">Date:</label>
+                            <input type="date" class="form-control" id="date" name="date"
+                                [(ngModel)]="Competition1.date">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="startTimeInput" class="form-label">Start Time:</label>
+                            <input type="time" class="form-control" id="startTime" name="start_time"
+                                [(ngModel)]="Competition1.startTime">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="endTimeInput" class="form-label">End Time:</label>
+                            <input type="time" class="form-control" id="endTime" name="end_time"
+                                [(ngModel)]="Competition1.endTime">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="locationInput" class="form-label">Location:</label>
+                            <input type="text" class="form-control" id="location" name="location"
+                                placeholder="Enter location" [(ngModel)]="Competition1.location">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="participantsInput" class="form-label">Number of Participants:</label>
+                            <input type="number" class="form-control" id="participants" name="number_of_participants"
+                                placeholder="Enter number of participants"
+                                [(ngModel)]="Competition1.numberOfParticipants">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-primary" data-bs-dismiss="modal" (click)="addCompetition()">Save
+                            Event</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

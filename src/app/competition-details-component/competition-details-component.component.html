@@ -1,0 +1,261 @@
+<body class="sb-nav-fixed">
+    <app-nav></app-nav>
+    <div id="layoutSidenav">
+        <app-sidebar></app-sidebar>
+        <div id="layoutSidenav_content">
+            <main class="mt-3">
+                <div class="container-fluid px-4">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            DataTable
+                        </div>
+                        <div class="table-responsive-sm">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name Competition</th>
+                                        <th>Date</th>
+                                        <th>Amount of Competition</th>
+                                        <th>Start Time</th>
+                                        <th>End Time</th>
+                                        <th>Location</th>
+                                        <th>Number Of Carticipants</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{DataCOmpetition.code}}</td>
+                                        <td>{{DataCOmpetition.date}}</td>
+                                        <td>{{DataCOmpetition.amount}}</td>
+                                        <td>{{DataCOmpetition.startTime}}</td>
+                                        <td>{{DataCOmpetition.endTime}}</td>
+                                        <td>{{DataCOmpetition.location}}</td>
+                                        <td>{{DataCOmpetition.numberOfParticipants}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header border-bottom">
+                                <div class="row flex-between-end">
+                                    <div class="col-auto align-self-center">
+                                        <div class="d-flex justify-content-around">
+                                            <div class="d-flex justify-content-around">
+                                                <h1>List of participants</h1>
+
+                                                <h3 class="ms-3">18/20</h3>
+                                            </div>
+                                            <div class="mt-1">
+                                                <button type="button" class="custom-button" data-bs-toggle="modal"
+                                                    data-bs-target="#AddUser">
+                                                    <span class="custom-button__text">Add User</span>
+                                                    <span class="custom-button__icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                            viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round"
+                                                            stroke-linecap="round" stroke="currentColor" height="24"
+                                                            fill="none" class="custom-svg">
+                                                            <line y2="19" y1="5" x2="12" x1="12"></line>
+                                                            <line y2="12" y1="12" x2="19" x1="5"></line>
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                                <button type="button" class="custom-button" data-bs-toggle="modal"
+                                                    data-bs-target="#AddUserInC">
+                                                    <span class="custom-button__text">Add in C</span>
+                                                    <span class="custom-button__icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                            viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round"
+                                                            stroke-linecap="round" stroke="currentColor" height="24"
+                                                            fill="none" class="custom-svg">
+                                                            <line y2="19" y1="5" x2="12" x1="12"></line>
+                                                            <line y2="12" y1="12" x2="19" x1="5"></line>
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane preview-tab-pane active">
+                                        <div class="table-responsive scrollbar">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Name</th>
+                                                        <th scope="col">Email</th>
+                                                        <th class="text-end" scope="col">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Ricky Antony</td>
+                                                        <td>ricky@example.com</td>
+                                                        <td class="text-end">
+                                                            <div class="d-flex justify-content-end align-items-center">
+                                                                <button class="custom-btn me-4">
+                                                                    Edit
+                                                                    <svg class="custom-svg" viewBox="0 0 512 512">
+                                                                        <path
+                                                                            d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </button>
+
+                                                                <button class="button1 noselect">
+                                                                    <span class="text">Delete</span>
+                                                                    <span class="icon">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="24" height="24" viewBox="0 0 24 24">
+                                                                            <path
+                                                                                d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z">
+                                                                            </path>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                            </div>
+
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container mt-5">
+                        <div class="row">
+                            <!-- End Date -->
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Competition Start Date</h5>
+                                        <p class="card-text">{{DataCOmpetition.endTime}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Start Date -->
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Competition End Date</h5>
+                                        <p class="card-text">{{DataCOmpetition.startTime}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <app-footer></app-footer>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!--Model -->
+    <div class="modal" id="AddUser" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="FirstNameU" class="form-label">First Name:</label>
+                            <input type="text" class="form-control" id="FirstNameU" name="FirstNameU"
+                                placeholder="Enter number of participants" [(ngModel)]="AddUser.name">
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="LastNameU" class="form-label">Last Name:</label>
+                            <input type="text" class="form-control" id="LastNameU" name="LastNameU"
+                                placeholder="Enter number of participants" [(ngModel)]="AddUser.familyName">
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="IdNumber_U" class="form-label">Identity Number:</label>
+                            <input type="number" class="form-control" id="IdNumber_U" name="IdNumber_U"
+                                placeholder="Enter number of participants" [(ngModel)]="AddUser.identityNumber">
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="NationalityU" class="form-label">Nationality:</label>
+                            <input type="text" class="form-control" id="NationalityU" name="NationalityU"
+                                placeholder="Enter number of participants" [(ngModel)]="AddUser.nationality">
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="NumberU" class="form-label">Number:</label>
+                            <input type="number" class="form-control" id="NumberU" name="NumberU"
+                                placeholder="Enter number of participants" [(ngModel)]="AddUser.num">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-primary" data-bs-dismiss="modal" (click)="Addusser()">Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="AddUserInC" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="FirstNameU" class="form-label">List User</label>
+                            <select class="form-control" id="FirstNameU" name="FirstNameU" [(ngModel)]="AddRank.member">
+                                <option *ngFor="let user of UserModel" [ngValue]="user.id">{{ user.name }} {{
+                                    user.familyName }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-primary" data-bs-dismiss="modal" (click)="AddRanking()">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
